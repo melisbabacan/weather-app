@@ -1,29 +1,26 @@
 import type {CurrentWeather} from "../api/api";
-type WeatherCardProps = {
+
+type Props = {
     weather: CurrentWeather;
     unitSymbol: string;
 };
 
-export function WeatherCard({weather, unitSymbol}: WeatherCardProps) {
-
+export function WeatherCard({weather, unitSymbol}: Props) {
+    // background photo up to weather conditions
     const getBackgroundImage = (description: string) => {
         const desc = description.toLowerCase();
-
-        if (desc.includes("cloud")) {
-            return "https://miro.medium.com/1*GsImz-edoeuqCMfKxDus0w.jpeg";
+        if (desc.includes('cloud') || desc.includes('bulut')) {
+            return 'https://miro.medium.com/1*GsImz-edoeuqCMfKxDus0w.jpeg';
+        } else if (desc.includes('rain') || desc.includes('yağmur')) {
+            return 'https://media.istockphoto.com/id/1257951336/photo/transparent-umbrella-under-rain-against-water-drops-splash-background-rainy-weather-concept.jpg?s=612x612&w=0&k=20&c=lNvbIw1wReb-owe7_rMgW8lZz1zElqs5BOY1AZhyRXs=';
+        } else if (desc.includes('snow') || desc.includes('kar')) {
+            return 'https://wmo.int/sites/default/files/2025-02/Snow%20Feature%20Image.jpg';
+        } else if (desc.includes('sun') || desc.includes('güneş') || desc.includes('clear')) {
+            return 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7kVhhQNhTR0YPQylH2jr63_E2E1KxygZMJg&s';
+        } else if (desc.includes('storm') || desc.includes('fırtına')) {
+            return 'https://t3.ftcdn.net/jpg/04/09/38/88/360_F_409388878_YWjMLSwp6YJm833AclWTqQIF0ZtHbWlz.jpg';
         }
-        if (desc.includes("rain")) {
-            return "https://media.istockphoto.com/id/1257951336/photo/transparent-umbrella-under-rain-against-water-drops-splash-background-rainy-weather-concept.jpg?s=612x612&w=0&k=20&c=lNvbIw1wReb-owe7_rMgW8lZz1zElqs5BOY1AZhyRXs=";
-        }
-        if (desc.includes("snow")) {
-            return "https://wmo.int/sites/default/files/2025-02/Snow%20Feature%20Image.jpg";
-        }
-        if (desc.includes("sun")) {
-            return "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7kVhhQNhTR0YPQylH2jr63_E2E1KxygZMJg&s";
-        }
-        if (desc.includes("storm")) {
-            return "https://t3.ftcdn.net/jpg/04/09/38/88/360_F_409388878_YWjMLSwp6YJm833AclWTqQIF0ZtHbWlz.jpg";
-        }
+        return 'https://images.unsplash.com/photo-1534088568595-a066f410bcda?w=800&h=600&fit=crop';
     };
 
     const backgroundImage = getBackgroundImage(weather.description);

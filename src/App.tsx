@@ -67,7 +67,7 @@ export default function App() {
     }, [query]);
     return (
         <main className="mx-auto max-w-3xl p-4 sm:p-6 relative">
-            {/* Header */}
+
             <header className="mb-6 flex items-center justify-between gap-2">
                 <h1 className="text-2xl font-semibold tracking-tight">Weather App</h1>
                 <div className="flex items-center gap-2">
