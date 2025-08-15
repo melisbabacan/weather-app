@@ -50,3 +50,11 @@ npm run dev
 
 - Open in your browser
 Visit: http://localhost:5173
+
+## 🛠 Tech Stack
+- **React** — UI development
+- **TypeScript** — Type safety
+- **Vite** — Fast build tool
+- **Tailwind CSS** — Utility-first CSS framework for styling
+- **Zustand** — Lightweight state management
+- **OpenWeather API** — Weather data source
