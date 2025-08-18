@@ -51,6 +51,9 @@ export async function fetchCurrentWeather(
     throw new Error("Failed to load weather data");
   }
   const data = await res.json();
+
+
+
   const windUnit = unit === "metric" ? "m/s" : "mph";
 
   return {

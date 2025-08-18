@@ -58,3 +58,6 @@ Visit: http://localhost:5173
 - **Tailwind CSS** — Utility-first CSS framework for styling
 - **Zustand** — Lightweight state management
 - **OpenWeather API** — Weather data source
+
+## Netlify Link
+https://weatherrappproject.netlify.app/

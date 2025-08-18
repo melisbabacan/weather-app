@@ -1,4 +1,4 @@
-import {useEffect, useMemo, useState} from "react";
+import {useEffect, useState} from "react";
 import {useUnitStore} from "./store/unitStore";
 import {useThemeStore} from "./store/themeStore";
 import {useWeatherStore} from "./store/weatherStore";
@@ -9,6 +9,7 @@ import {DarkModeToggle} from "./components/darkModeToggle/DarkModeToggle.tsx";
 import {Loader} from "./components/Loader/Loader.tsx";
 import {ErrorMessage} from "./components/ErrorMessage/ErrorMessage.tsx";
 import { UnitToggle } from "./components/UnitToggle";
+import  {symbols}from "./components/constants.ts"
 
 
 
@@ -41,7 +42,9 @@ export default function App() {
         void search(city, unit);
     }, [city, unit]);
 
-    const temperatureSymbol = useMemo(() => (unit === "metric" ? "°C" : "°F"), [unit]);
+
+
+    const temperatureSymbol=symbols[unit];
 
     async function handleSearch(nextCity?: string) {
         const target = (nextCity ?? query).trim();
